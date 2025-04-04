@@ -1,7 +1,11 @@
-import './App.css'
-import Accordion from './components/accordion/Accordion'
-import Colorpicker from './components/color-picker/Colorpicker'
-import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
+import './App.css';
+import Accordion from './components/accordion/Accordion';
+import Colorpicker from './components/color-picker/Colorpicker';
+import {BrowserRouter as Router, Routes, Route, Navigate, Outlet} from 'react-router-dom';
+import Sidebar from './components/sidebar';
+import Profile from './components/profile/Profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { projects } from "./assets/projects";
 
 function App() {
   
@@ -9,10 +13,13 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/accordion" element={<Accordion />}></Route>
-          <Route path="/color-picker" element={<Colorpicker />}></Route>
+          <Route path="/" element={<Navigate to="/profile" replace />} />
+
+          <Route element={<Sidebar />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/accordion" element={<Accordion />} />
+            <Route path="/color-picker" element={<Colorpicker />} />
+          </Route>
         </Routes>
       </Router>
     </>
@@ -20,11 +27,3 @@ function App() {
 }
 
 export default App
-
-function Home () {
-  return (
-    <>
-      <h1>Home</h1>
-    </>
-  )
-}

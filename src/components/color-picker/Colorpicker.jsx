@@ -55,7 +55,7 @@ function Colorpicker() {
   }, [colorType, handleRandomHexColor, handleRandomRGBColor]);
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "2rem", marginTop: "10rem", }}>
     <div style={{
       display: "flex",
       justifyContent: "center",

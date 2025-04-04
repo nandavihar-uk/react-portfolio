@@ -31,7 +31,7 @@ function Accordion() {
     <div>
         <h1>Accordion</h1>
         <div className="wrapper">
-            <button className="btn" onClick={() => toggleMultiple()}>
+            <button className="expand-btn" onClick={() => toggleMultiple()}>
                 {multiSelected === true ? 'Collapse All' : 'Expand All'}
             </button>
             <div className="accordion">
